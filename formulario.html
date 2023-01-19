@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="formulario.css">
+
+</head>
+<body class="fondopag">
+    <main>
+
+        <div class="grid text-center logo2">
+            <img src="/img/LOGOFORMULARIO.svg" alt="dibujo de logo cirular de flores Cristina Maser" class="logo1">
+        </div>
+
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+            
+            <form action="" class="formulario" id="formulario">
+
+                <!--grupo nombre-->
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Pepita">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">El nombre tiene que ser de 3 a 16 dígitos y solo puede contener números, letras y/o guión bajo.</p>
+                </div>
+
+                <!--grupo apellidos-->
+                <div class="formulario__grupo" id="grupo__apellidos">
+                    <label for="apellidos" class="formulario__label">Apellidos</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="apellidos" id="apellidos" placeholder="Pérez">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">Los apellidos tienen que ser de 3 a 16 dígitos y solo pueden contener números, letras y/o guión bajo.</p>
+                </div>
+
+                <!-- grupo dni -->
+                <div class="formulario__grupo" id="grupo__dni">
+                    <label for="dni" class="formulario__label">DNI O CIF</label>
+                    <div class="formulario__grupo-input">
+                        <input id="dni" type="text" name="dni" placeholder="DNI" maxlength="9" tabindex="4" class="formulario__input dni">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">El DNI debe de estar formado por 8 caracteres que estén entre el 0 y el 9, seguidos de una letra mayúscula.</p>
+                </div>
+
+                <!-- grupo REVISTA -->
+                <div class="formulario__grupo" id="grupo__revista">
+                    <label for="revista" class="formulario__label">Recibir Newsletter</label>
+                    <div class="formulario__grupo-input">
+                        <select class="form-select formulario__input" onclick="validarRevista();" value="validarRevista" aria-label="Default selected" id="revista">
+                            <option value="0" style="font-size: 15px">¿Desea recibir nuestra Newsletter?</option>
+                            <option value="1">SI</option>
+                            <option value="2">NO</option>
+                        </select>
+                        <!-- <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i> -->
+                    </div>
+                    <p class="formulario__input-error">Por favor, elija una opción.</p>
+                </div>
+
+                <!--grupo Correo Electrónico-->
+                <div class="formulario__grupo" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="ejemplo@correo.com">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo sólo puede contener letras, números y puntos.</p>
+                </div>
+
+                <!--grupo CONFIRMAR CORREO-->
+                <div class="formulario__grupo" id="grupo__correo2">
+                    <label for="correo2" class="formulario__label">Confirmar Correo</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="correo2" id="correo2" placeholder="">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">Ambos correos deben ser iguales.</p>
+                </div>
+
+                <!--grupo Teléfono-->
+                <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="696123456">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">El Teléfono sólo puede contener números y un máximo de 12 dígitos</p>
+                </div>
+
+                <!--grupo usuario-->
+                <div class="formulario__grupo" id="grupo__usuario">
+                    <label for="usuario" class="formulario__label">Usuario</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Pepita007">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener números, letras y/o guión bajo.</p>
+                </div>
+
+                <!--grupo Contaseña-->
+                <div class="formulario__grupo" id="grupo__password">
+                    <label for="password" class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="password" id="password">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">La contraseña debe ser de 4 a 12 dígitos.</p>
+                </div>
+
+                <!--grupo Contaseña2-->
+                <div class="formulario__grupo" id="grupo__password2">
+                    <label for="password2" class="formulario__label">Repetir Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="password2" id="password2" placeholder="">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+                </div>
+
+                <!--grupo Términos y Condiciones-->
+                <div class="formulario__grupo" id="grupo__terminos">
+                    <label class="formulario__label">
+                        <input class="formulario__chekbox" type="checkbox" name="terminos" id="terminos">
+                        Acepto los Términos y Condiciones
+                    </label>
+                </div>
+
+                <!-- mensaje error -->
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p class="error"><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellene el formulario correctamente. </p>
+                </div>
+
+                <!-- boton -->
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="submit" class="formulario__btn">Enviar</button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">El formulario se ha enviado correctamente, Gracias!</p>
+                </div>
+            </form>
+        </div>    
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="/formulario.js"></script>
+</body>
+</html>
